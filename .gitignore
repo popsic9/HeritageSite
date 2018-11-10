@@ -87,3 +87,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# secrets
+mysite/secrets.py
