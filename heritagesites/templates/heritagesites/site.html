@@ -25,7 +25,7 @@
     {% for site in sites %}
 
     <!-- safe filter on for raw HTML stored in database -->
-    <li><a href="{% url 'site_detail' site.pk %}">{{ site.site_name | safe }}</a></li>
+    <li><a href="{% url 'site' site.pk %}">{{ site.site_name | safe }}</a></li>
     {% endfor %}
 
 

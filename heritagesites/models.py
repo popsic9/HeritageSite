@@ -90,6 +90,7 @@ class HeritageSite(models.Model):
 
     # Intermediate model (country_area -> heritage_site_jurisdiction <- heritage_site)
     country_area = models.ManyToManyField(CountryArea, through='HeritageSiteJurisdiction')
+    
 
     class Meta:
         managed = False
@@ -107,11 +108,11 @@ class HeritageSite(models.Model):
             country_area.country_area_name for country_area in self.country_area.all()[:25])
     
     def get_absolute_url(self):
-        return reverse('site_detail', kwargs={'pk': self.pk})
-		# return reverse('site_detail', args=[str(self.id)])
-		#return reverse('site_detail', kwargs={'pk': self.pk})
-
+        return reverse('site', kwargs={'pk':self.pk})
+    
     country_area_display.short_description = 'Country or Area'
+
+    
 
 
 '''
