@@ -7,6 +7,8 @@ from .models import HeritageSite
 from .models import CountryArea
 from .models import HeritageSiteJurisdiction
 from .forms import HeritageSiteForm
+from .filters import HeritageSiteFilter
+from django_filters.views import FilterView
 
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -169,7 +171,9 @@ class SiteUpdateView(generic.UpdateView):
 
 
 
-
+class SiteFilterView(FilterView):
+	filterset_class = HeritageSiteFilter
+	template_name = 'heritagesites/site_filter.html'
 
 
 
