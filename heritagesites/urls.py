@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 
 from . import views
 
@@ -13,4 +13,5 @@ urlpatterns = [
     path('sites/<int:pk>/delete/', views.SiteDeleteView.as_view(), name='site_delete'),
     path('sites/<int:pk>/update/', views.SiteUpdateView.as_view(), name='site_update'),
     path('filter', views.SiteFilterView.as_view(), name='filter'),
+    
 ]
